@@ -100,14 +100,29 @@ namespace ZadachiYaziky
             /*Magic matrix = new Magic();
             matrix.inp();
             matrix.outp();*/
-            Matrix mat = new Matrix();
+
+
+            /*Matrix mat = new Matrix();
             mat.input();
             mat.outp();
             mat.Transpon();
             mat.multMatrix();
             mat.minus();
-            mat.outp();
-            Console.ReadKey();
+            mat.outp();*/
+
+            string Sourcename = "SourceText.txt";
+            string sourcetext = "Алый цвет ее губ был ужасно похож на багряные листья березы, которые бесшумно падали вниз на осеннюю, влажную траву.";
+            string synFile = "Synonym.txt";
+            string syntext = "алый,красный,ужасно,страшно,влажную,мокрую,бесшумно,тихо";
+            string resfile = "Result.txt";
+            Files file = new Files();
+
+            file.CreateAndWriteText(Sourcename, sourcetext);
+            file.CreateAndWriteText(synFile, syntext);
+
+            file.ReplaceAndSave(Sourcename, synFile, resfile);
+
+            //Console.ReadKey();
         }
     }
 }
